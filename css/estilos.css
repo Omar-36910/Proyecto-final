@@ -1,0 +1,463 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Tipografia de google fonts */
+    font-family: 'Outfit', sans-serif;
+}
+
+main {
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    padding: 1rem;
+    /* box-shadow: eje-x eje-y blur color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav__lista {
+    width: 100%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: row;
+    /* Para ver el efecto debemos tener espacio disponible */
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 1rem;
+    
+}
+
+.nav__enlace {
+    color: darkorange;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero {
+    /* background-color: red; */
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.hero__left, .hero__right {
+    width: 50%;
+}
+
+.hero__left {
+    /* background-color: pink; */
+    padding: 1rem;
+}
+
+.hero__right {
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+}
+
+.hero__right img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 50%;
+}
+
+.imagen__one {
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero__title {
+    font-size: 35px;
+}
+
+.hero__subtitle {
+    font-size: 50px;
+}
+
+.hero__subtitle span {
+    color: darkorange;
+}
+
+.footer {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copy a{
+    color:darkorange;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+
+.header__icono {
+    display: none;
+}
+
+/* segunda section */
+.section__one{
+    /* background-color: antiquewhite; */
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.section__right, .section__left {
+    width: 50%;
+} 
+
+.section__right {
+    /* background-color: pink; */
+    width: 100%;
+}
+
+.section__left {
+    /* background-color: aqua; */
+    padding: 1rem;
+}
+
+.section__left img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 50%;
+}
+
+.section__title {
+    padding: 1rem;
+    font-size: 35px;
+    text-align: left;
+    
+}
+
+.nav__item--oculto {
+    display: none;
+}
+
+.imagen-responsive {
+    width: 100%;
+}
+
+.header__open {
+    display: none;
+}
+
+.gatito {
+    width: 100%;
+}
+
+/*Animacones*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.caja {
+    border:1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    max-width: 1000px;
+    width: 80%;
+    /* height: 350px; */
+    padding: 1rem;
+}
+
+.animaciones {
+    position: relative;
+}
+
+/* Lo que va a ocurrir en la animacion */
+/* Aca la declaramos */
+@keyframes efecto {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        left: calc(100% - 100px);
+        top: 0;
+    }
+
+    50% {
+        left: calc(100% - 100px);
+        top: calc(100% - 100px);
+
+    }
+
+    75% {
+        left: 0;
+        top: calc(100% - 100px);
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+.animaciones {
+    overflow: hidden;
+}
+
+.animaciones .gatito{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* transition: all 1s; */
+
+
+}
+
+.animaciones:hover .gatito {
+    /* transform: scale(1.3); */
+    animation-name: gatito;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes gatito {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Media Querys */
+
+/* Deben estar al final de nuestros estilos */
+/* Desktop First -> max-wdith */
+/* Debemos usar el @media { ... } */
+
+
+/* A las vista menores de 1024px */
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: yellow;
+    }
+
+    .hero__title {
+        text-transform: uppercase;
+        text-decoration: line-through;
+    }
+
+    .rewards__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 300px 300px;
+    }
+}
+
+/* A las vista menores de 600px */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: pink;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero__right img {
+        width: 100%;
+        border-radius: 50%;
+        /* margin: 0px 20px 5px 10px; */
+    }
+
+
+    .section__one {
+        padding-top: 1rem;
+        flex-direction: column;
+    }
+
+    .section__right, .section__left {
+        width: 100%;
+    }
+
+    .section__title {
+        padding: 1rem;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .section__right {
+        width: 100%;
+        text-align: center;
+    } 
+
+    .section__left img {
+        width: 100%;
+    }
+
+    .imagen__one {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .gatito, .caja, .animaciones {
+        width: 100%;
+        /* border-radius: 50%; */
+    }
+
+
+
+
+    /* Inicio Sidebar */
+
+    /* .nav {
+        display: none;
+    } */
+
+    .header__open {
+        text-decoration: none;
+        display: block;
+    }
+
+    .header__icono {
+        display: block;
+        font-size: 32px;
+        color: darkorange;
+    }
+
+    #sidebar {
+        background-color: #e0e0e0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        height: 100vh;
+        width: 80%;
+        max-width: 350px;
+        padding: 1rem;
+
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+    }
+
+    #sidebar .nav__lista {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    #sidebar:target {
+        /* display: block; */
+        transform: translateX(0);
+    }
+
+    .nav__item--oculto {
+        display: block;
+    }
+
+    /* Fin Sidebar */
+
+    .hero {
+        padding-top: 1rem;
+        flex-direction: column-reverse;
+    }
+
+    .hero__left, .hero__right {
+        width: 100%;
+    }
+
+    .rewards__grid { 
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 300px 300px 300px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.titulo__pre {
+    margin: 25px ;
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.respuestas {
+    margin: 5px 10px 12px 20px;
+}
+
+.preguntas {
+    color:orange;
+    font-size: 30px;
+    font-style: oblique;
+    margin: 5px 10px 10px 15px ;
+}
+
+.responder {
+    margin: 0 40px;
+}
+
+.imagen__one {
+    border-radius: 50%;
+}
+
+.titulo__fab {
+    margin: 25px ;
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.formulario {
+    margin: 25px ;
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+}
+
+.imagen__for {
+    margin: 20px;
+}
